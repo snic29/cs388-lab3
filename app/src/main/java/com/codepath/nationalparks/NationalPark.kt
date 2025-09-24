@@ -25,8 +25,15 @@ class NationalPark {
     @SerializedName("states")
     var location: String? = null
 
-    //TODO parkImageUrl
+    //parkImageUrl
+    @SerializedName("images")
+    var images: List<Image>? = null
 
+    // Convenience property to access the first image’s URL
+    val imageUrl: String? get() = images?.firstOrNull()?.url
 
-    //TODO-STRETCH-GOALS
+    class Image {
+        @SerializedName("url")
+        var url: String? = null
+    }
 }
